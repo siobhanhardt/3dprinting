@@ -50,7 +50,7 @@ function App() {
         <Routes>
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/3dprinting" element={
+          <Route path="/" element={
             <>
       <section id="home" className="full-page-header">
         <img className="lefthex" src={lefthex} alt="Left Hex" />
