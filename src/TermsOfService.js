@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import './PrivacyPolicy.css';
 import './App.css';
 import logo from './images/logo.png';
+import lefthex from './images/lefthex.png';
+import righthex from './images/righthex.png';
 
 const TermsOfService = () => {
+    const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
     return (
         <div>
             <section id="home" className="full-page-header">
-                <img src={logo} alt="Logo" />
+                <img className="lefthex" src={lefthex} alt="Left Hex" />
+                <img className="righthex" src={righthex} alt="Right Hex"/>
+                <img className="lefthex2" src={lefthex} alt="Left Hex"  style={{ left: `${-200 + scrollY * 0.2}px` }} />
+                <img className="righthex2" src={righthex} alt="Right Hex" style={{ right: `${-200 + scrollY * 0.2}px` }}/>
+                <img className="toplogo" src={logo} alt="Logo" />
             </section>
             <div className="privacy">
             <h1>Website Terms and Conditions of Use</h1><br />

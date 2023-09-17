@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import './PrivacyPolicy.css';
 import './App.css';
 import logo from './images/logo.png';
+import lefthex from './images/lefthex.png';
+import righthex from './images/righthex.png';
 
 const PrivacyPolicy = () => {
+    const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
     return (
         <div >
             <section id="home" className="full-page-header">
-                <img src={logo} alt="Logo" />
+                <img className="lefthex" src={lefthex} alt="Left Hex" />
+                <img className="righthex" src={righthex} alt="Right Hex"/>
+                <img className="lefthex2" src={lefthex} alt="Left Hex"  style={{ left: `${-200 + scrollY * 0.2}px` }} />
+                <img className="righthex2" src={righthex} alt="Right Hex" style={{ right: `${-200 + scrollY * 0.2}px` }}/>
+                <a href= "/"><img className="toplogo" src={logo} alt="Logo" /></a>
             </section>
             <div className="privacy">
                 <h1>Privacy Policy for 3D Printing Kildare</h1>
@@ -59,7 +75,9 @@ const PrivacyPolicy = () => {
                 </div>
                 <footer>
                     <div>
+                    <a href="/">
                     <img src={logo} alt="Logo" />
+                    </a>
                     </div>
                     <div> 
                     <a href="/privacy-policy">Privacy Policy &nbsp; &nbsp; &nbsp;</a>

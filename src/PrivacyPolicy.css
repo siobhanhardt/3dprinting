@@ -1,3 +1,4 @@
+
 h1 {
     text-align: center;
 }
@@ -8,3 +9,10 @@ h2 {
 .privacy {
     padding: 50px 200px;
 }
+.toplogo {
+    max-width: 30%;
+}
+.privacy {
+    padding: 0px 15vw;
+}
+

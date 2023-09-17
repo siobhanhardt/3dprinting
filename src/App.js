@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
+import ReactGA from 'react-ga4';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
@@ -28,11 +29,19 @@ import fiverr from './images/fiverr.png';
 import lefthex from './images/lefthex.png';
 import righthex from './images/righthex.png';
 
-function navigateToFiverr() {
-  window.open('https://www.fiverr.com/printing3d_ie', '_blank');
+const TRACKING_ID = "G-5DPLXGZ082"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
+const useAnalyticsEventTracker = (category="Blog category") => {
+  const eventTracker = (action = "test action", label = "test label") => {
+    ReactGA.event({category, action, label});
+  }
+  return eventTracker;
 }
 
 function App() {
+  const gaEventTracker = useAnalyticsEventTracker('Contact us');
+
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -83,7 +92,7 @@ function App() {
       <section id="portfolio">
         <div className='portfolio-header'>
           <h3>WHAT WE DO</h3>
-          <h1>Our portfolio speaks better louder words!</h1>
+          <h1>Our portfolio speaks louder than words!</h1>
         </div>
         <div className="portfolio-content">
           <div className="portfolio-item">
@@ -96,7 +105,7 @@ function App() {
             <img src={bulbasaur} alt="Bulbasaur" />
             <h1>Bulbasaur</h1>
             <h3>PLA</h3>
-            <p>Description for Bulbasaur...</p>
+            <p>A plant pot holder printed with our FDM printer. Sanded down to reduce layer lines and painted.</p>
           </div>
           <div className="portfolio-item">
             <img src={melania} alt="Melania Bust" />
@@ -191,11 +200,11 @@ function App() {
                     <img src={location} alt="Location" />
                     <h2>MAYNOOTH, KILDARE</h2>
                     <p>9 AM - 7 PM</p>
-                    <img src={fiverr} alt="Fiverr" />
+                    <a href="https://www.fiverr.com/printing3d_ie" onClick={()=>gaEventTracker('Fiverr')}>
+                      <img src={fiverr} alt="Fiverr" />
+                    </a>
                     <h2>FIVERR</h2>
                     <p>Find us on fiverr</p>
-                    <button onClick={navigateToFiverr}>Click Here</button>
-
                 </div>
             </div>
           </div>
@@ -203,7 +212,9 @@ function App() {
 
       <footer>
         <div>
-          <img src={logo} alt="Logo" />
+          <a href="/">
+            <img src={logo} alt="Logo" />
+          </a>
         </div>
         <div> 
           <a href="/privacy-policy">Privacy Policy &nbsp; &nbsp; &nbsp;</a>
