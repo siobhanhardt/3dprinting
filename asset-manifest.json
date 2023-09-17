@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/3dprinting/static/css/main.6fc53c53.css",
-    "main.js": "/3dprinting/static/js/main.2889a04b.js",
+    "main.js": "/3dprinting/static/js/main.4cf78f73.js",
     "static/js/787.19cdb978.chunk.js": "/3dprinting/static/js/787.19cdb978.chunk.js",
     "static/media/phone.jpg": "/3dprinting/static/media/phone.501fb91a48e11ad1f96e.jpg",
     "static/media/handlebars.jpg": "/3dprinting/static/media/handlebars.27f776861199d3ab27ab.jpg",
@@ -17,11 +17,11 @@
     "static/media/righthex.png": "/3dprinting/static/media/righthex.69d0b8a19e4da2128392.png",
     "index.html": "/3dprinting/index.html",
     "main.6fc53c53.css.map": "/3dprinting/static/css/main.6fc53c53.css.map",
-    "main.2889a04b.js.map": "/3dprinting/static/js/main.2889a04b.js.map",
+    "main.4cf78f73.js.map": "/3dprinting/static/js/main.4cf78f73.js.map",
     "787.19cdb978.chunk.js.map": "/3dprinting/static/js/787.19cdb978.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6fc53c53.css",
-    "static/js/main.2889a04b.js"
+    "static/js/main.4cf78f73.js"
   ]
 }
