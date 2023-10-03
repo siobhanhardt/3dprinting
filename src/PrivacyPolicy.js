@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
                 <img className="righthex" src={righthex} alt="Right Hex"/>
                 <img className="lefthex2" src={lefthex} alt="Left Hex"  style={{ left: `${-200 + scrollY * 0.2}px` }} />
                 <img className="righthex2" src={righthex} alt="Right Hex" style={{ right: `${-200 + scrollY * 0.2}px` }}/>
-                <a href= "/"><img className="toplogo" src={logo} alt="Logo" /></a>
+                <img className="toplogo" src={logo} alt="Logo" />
             </section>
             <div className="privacy">
                 <h1>Privacy Policy for 3D Printing Kildare</h1>

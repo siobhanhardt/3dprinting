@@ -67,7 +67,9 @@ const TermsOfService = () => {
             </div>
             <footer>
                     <div>
+                    <a href="/">
                     <img src={logo} alt="Logo" />
+                    </a>
                     </div>
                     <div> 
                     <a href="/privacy-policy">Privacy Policy &nbsp; &nbsp; &nbsp;</a>

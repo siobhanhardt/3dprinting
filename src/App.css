@@ -102,10 +102,47 @@ section {
   display: grid;
   gap: 20px;
 }
-.portfolio-item img {
+.portfolio-item, .portfolio-item-large {
+  position: relative;
+}
+.portfolio-item img{
   border-radius: 10px;
 }
-
+.portfolio-item-large img {
+  border-radius: 10px;
+}
+.image-section {
+  position: absolute;
+}
+.text-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(24, 24, 24, 0.7); 
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.portfolio-item:hover .text-section, .portfolio-item-large:hover .text-section {
+  opacity: 1;
+}
+.load-more {
+  padding: 20px;
+  background-color: #FCAD01;
+  font-family: 'Bayon';
+  color: white;
+  font-size: 1.5em;
+  border: 0px;
+  border-radius: 4px;
+  margin: 20px 0 0 0;
+  letter-spacing: 0.1em;
+}
 .col h3 {
   text-align: left;
 }
@@ -197,8 +234,15 @@ footer p {
   .lefthex2 { width: 20%; }
   .righthex2 { width: 20%; }
   .full-page-header { height: 20vh; }
+  .image-section {position: static;}
+  .text-section {position: static; opacity: 1;}
   .portfolio-content { grid-template-columns: repeat(1, 1fr); gap: 20px; }
-  .portfolio-item img { max-width: 80%; }
+  .portfolio-item {width: 60vw; height: auto; margin-left: auto; margin-right: auto;}
+  .portfolio-item-large {width: 60vw; height: auto; margin-left: auto; margin-right: auto;}
+  .portfolio-item img { max-width: 100%; }
+  .portfolio-item-large img { max-width: 100%; }
+  .portfolio-content h1, h3 {line-height: 0.5em; margin-block-start: 0.5em; margin-block-end: 0.5em;} 
+  .portfolio-content p {margin-block-start: 0.5em; margin-block-end: 0.5em;}
   .services-1 { padding: 0 20px; grid-template-columns: repeat(2, 1fr); gap: 0px; }
   .services-2 { padding: 0 20px; margin-top: 10px; grid-template-columns: repeat(1, 1fr); gap: 30px; }
   .services-2 img { max-width: 15%; }
@@ -218,12 +262,19 @@ footer p {
   .about-content p { margin: 20px; }
   #about img { max-width: 100%; height: auto; }
   .toplogo { max-width: 30%; }
-  .lefthex, .righthex { max-width: 50%; }
+  .lefthex, .righthex { max-width: 40%; }
   .lefthex2 { width: 60%; }
   .righthex2 { width: 60%; }
   .full-page-header { height: 40vh; }
+  .image-section {position: static;}
+  .text-section {position: static; opacity: 1;}
   .portfolio-content { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .portfolio-item img { max-width: 80%; }
+  .portfolio-item {width: 40vw; height:auto;}
+  .portfolio-item-large {width: 40vw; height: auto; }
+  .portfolio-item img { max-width: 100%; }
+  .portfolio-item-large img { max-width: 100%; }
+  .portfolio-content h1, h3 {line-height: 0.5em; margin-block-start: 0.5em; margin-block-end: 0.5em;} 
+  .portfolio-content p {margin-block-start: 0.5em; margin-block-end: 0.5em;} 
   .services-1 { padding: 0 20px; grid-template-columns: repeat(2, 1fr); gap: 0px; }
   .services-2 { padding: 0 20px; margin-top: 10px; grid-template-columns: repeat(3, 1fr); gap: 30px; }
   .services-2 img { max-width: 15%; }
@@ -244,13 +295,15 @@ footer p {
   .about-content p { flex: 1; margin-right: 1vw; font-size: 1.3vw;}
   #about img { max-width: 50%; min-width: 400px;}
   .toplogo { max-width: 30%; }
-  .lefthex, .righthex { max-width: 50%; }
-  .lefthex2 { width: 60%; }
-  .righthex2 { width: 60%; }
-  .portfolio-content { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .lefthex, .righthex { max-width: 30%; }
+  .lefthex2 { width: 50%; }
+  .righthex2 { width: 50%; }
+  .portfolio-content { grid-template-columns: repeat(3, 1fr); gap: 20px; grid-auto-flow: dense;}
+  .portfolio-item {width: 20vw; height: 20vw;}
   .portfolio-item img { max-width: 100%; }
-  #portfolio .portfolio-item h1 {font-size: 1em;} 
-  .portfolio-content h1, h3{line-height: 0.5em;} 
+  .portfolio-item-large img { max-width: 100%; object-fit: cover;}
+  .portfolio-item-large { width: 41.5vw; height: 0;padding-bottom: 100%; grid-row: span 2; grid-column: span 2; position: relative;}
+  .portfolio-content h1, h3 {line-height: 0.5em;} 
   .services-1 { padding: 0 20vw; grid-template-columns: repeat(2, 1fr); gap: 0px; }
   .services-1 h3{line-height: normal;}
   .services-2 { padding: 0 20vw; margin-top: 50px; grid-template-columns: repeat(3, 1fr); gap: 30px; }
